@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const features = [
   {
@@ -14,6 +15,7 @@ const features = [
       "https://picsum.photos/seed/3/150/100",
     ],
     widthStyle: "w-1/4",
+    presetPrompt: "A fashionable portrait captures two female celebrities, positioned side-by-side with one on the left and the other on the right. They both exude a stylish and playful charm in their fashionable and cute attire. The clothing might involve trendy dresses, stylish separates, or a mix of both, chosen to complement their individual styles and create a harmonious overall look. Soft, diffused lighting enhances their features and creates a warm, inviting atmosphere. Their poses are relaxed yet stylish, conveying a sense of effortless cool and camaraderie. The background is a smooth, solid-colored backdrop, perhaps a pastel shade or a more vibrant hue that complements their outfits, ensuring the focus remains on the two stars and their fashionable presence. The overall impression is one of modern glamour, playful sophistication, and the vibrant energy of these two fashionable icons.",
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ const features = [
       "https://picsum.photos/seed/6/150/100",
     ],
     widthStyle: "w-1/2",
+    presetPrompt: "A professional portrait captures a young couple against a neutral studio background.The background is smooth, monochromatic,seamless. The woman on the left wears a simple, elegant blouse in a soft color, while the man on the right is in a well-fitted button-down shirt. Their bodies are slightly angled toward each other, creating a sense of connection while allowing both faces to be clearly visible to the camera. The lighting is soft and flattering, with gentle shadows that create dimension without harshness. Their expressions are warm and genuine - perhaps soft smiles or a look of quiet contentment that suggests their comfort with each other. The composition is classic and balanced, with their faces at similar heights in the frame. The overall impression is one of authentic partnership, mutual respect, and the subtle intimacy of a couple who are at ease in each other's presence.",
   },
   {
     id: 3,
@@ -36,6 +39,7 @@ const features = [
       "https://picsum.photos/seed/9/150/100",
     ],
     widthStyle: "w-1/2",
+    presetPrompt: "A stylish portrait captures a woman and man, side-by-side, the woman positioned on the left and the man on the right. They both wear casual yet fashionable attire, perhaps trendy streetwear or designer separates, with the word 'yw' emblazoned across their shirts. The lighting is carefully crafted to create a mood of cool sophistication, highlighting their features and the stylish details of their clothing. Their poses are relaxed yet confident, conveying a sense of effortless cool. The background is  smooth, monochromatic,seamless,keeping the focus on the couple and their shared sense of style. The overall impression is one of modern fashion, youthful rebellion, and a strong connection between the two individuals.",
   },
   {
     id: 4,
@@ -47,10 +51,13 @@ const features = [
       "https://picsum.photos/seed/12/150/100",
     ],
     widthStyle: "w-1/4",
+    presetPrompt: "A half-body portrait captures a young couple in casual weekend attire against the backdrop of a cozy café. The woman on the left wears a soft sweater and simple necklace, while the man on the right is in a casual button-down with rolled sleeves. They sit at a small round table, perhaps with coffee cups or dessert plates visible in the foreground. The café setting is suggested through soft bokeh of warm lights, wooden elements, and perhaps hints of other patrons blurred in the background. The lighting is warm and intimate, suggesting afternoon or evening hours. Their posture shows them leaning slightly toward each other, engaged in conversation or sharing a moment of connection. Their expressions are relaxed and authentic - perhaps mid-laugh or exchanging warm glances. The overall impression is one of everyday intimacy, comfortable companionship, and the simple pleasure of shared time together.",
   },
 ];
 
 export default function Featured() {
+  const router = useRouter();
+
   useEffect(() => {
     const style = document.createElement("style");
     style.innerHTML = `
@@ -67,6 +74,13 @@ export default function Featured() {
       document.head.removeChild(style);
     };
   }, []);
+
+  // Handle the "Try Now" button click
+  const handleTryNow = (prompt, title) => {
+    const encodedPrompt = encodeURIComponent(prompt);
+    const encodedTitle = encodeURIComponent(title);
+    router.push(`/media?prompt=${encodedPrompt}&effect=${encodedTitle}`);
+  };
 
   return (
     <section className="flex flex-wrap justify-center items-stretch gap-6 px-8 py-16">
@@ -101,6 +115,7 @@ export default function Featured() {
               </p>
 
               <button
+                onClick={() => handleTryNow(feature.presetPrompt, feature.title)}
                 className="absolute top-0 left-0 w-[120px] bg-white text-black px-4 py-2 rounded-full text-sm font-medium opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out"
               >
                 Try Now

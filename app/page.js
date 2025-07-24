@@ -7,6 +7,7 @@ import Featured from "@/components/Featured";
 import Hero from "@/components/Hero";
 import DownloadSection from "@/components/DownloadSection";
 import Footer from "@/components/Footer";
+
 export default function Home() {
   const videoRef = useRef(null);
 
@@ -52,7 +53,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-<Footer/>
+      <Footer/>
     </div>
   );
 }
