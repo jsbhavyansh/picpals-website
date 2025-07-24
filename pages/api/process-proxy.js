@@ -4,10 +4,10 @@ export async function processImages({ image1, image2, prompt }) {
   formData.append('image2', image2);
   formData.append('prompt', prompt);
 
-  const apiUrl = process.env.NEXT_PUBLIC_BASE_URL;
+  // const apiUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
   try {
-    const res = await fetch(apiUrl, {
+    const res = await fetch('http://48.216.241.134:8000/api/process', {
       method: 'POST',
       body: formData,
     });
