@@ -7,8 +7,8 @@ import { useRouter } from "next/navigation";
 const features = [
   {
     id: 1,
-    title: "Group Photo",
-    description: "Manage tasks seamlessly and effectively with advanced tools.",
+    title: "Fashion Duo",
+    description: "Showcase modern style and playful charm with elegance.",
     images: [
       "https://picsum.photos/seed/1/150/100",
       "https://picsum.photos/seed/2/150/100",
@@ -19,8 +19,8 @@ const features = [
   },
   {
     id: 2,
-    title: "Background Change",
-    description: "Experience intuitive design and easy integration.",
+    title: "Studio Couple",
+    description: "Classic portrait with soft light and natural connection.",
     images: [
       "https://picsum.photos/seed/4/150/100",
       "https://picsum.photos/seed/5/150/100",
@@ -31,20 +31,20 @@ const features = [
   },
   {
     id: 3,
-    title: "Image Blend",
-    description: "Get real-time insights and analytics for confident decisions.",
+    title: "Street Style Blend",
+    description: "Trendy fashion with relaxed poses and bold details.",
     images: [
       "https://picsum.photos/seed/7/150/100",
       "https://picsum.photos/seed/8/150/100",
       "https://picsum.photos/seed/9/150/100",
     ],
     widthStyle: "w-1/2",
-    presetPrompt: "A stylish portrait captures a woman and man, side-by-side, the woman positioned on the left and the man on the right. They both wear casual yet fashionable attire, perhaps trendy streetwear or designer separates, with the word 'yw' emblazoned across their shirts. The lighting is carefully crafted to create a mood of cool sophistication, highlighting their features and the stylish details of their clothing. Their poses are relaxed yet confident, conveying a sense of effortless cool. The background is  smooth, monochromatic,seamless,keeping the focus on the couple and their shared sense of style. The overall impression is one of modern fashion, youthful rebellion, and a strong connection between the two individuals.",
+    presetPrompt: "A stylish portrait captures a woman and man, side-by-side, the woman positioned on the left and the man on the right. They both wear casual yet fashionable attire, perhaps trendy streetwear or designer separates, with the word 'yw' emblazoned across their shirts. The lighting is carefully crafted to create a mood of cool sophistication, highlighting their features and the stylish details of their clothing. Their poses are relaxed yet confident, conveying a sense of effortless cool. The background is smooth, monochromatic,seamless,keeping the focus on the couple and their shared sense of style. The overall impression is one of modern fashion, youthful rebellion, and a strong connection between the two individuals.",
   },
   {
     id: 4,
-    title: "Image Creation",
-    description: "Ensures security, scalability, and reliability at its core.",
+    title: "Cafe Moment",
+    description: "Warm, cozy portrait with everyday intimacy.",
     images: [
       "https://picsum.photos/seed/10/150/100",
       "https://picsum.photos/seed/11/150/100",
@@ -52,7 +52,7 @@ const features = [
     ],
     widthStyle: "w-1/4",
     presetPrompt: "A half-body portrait captures a young couple in casual weekend attire against the backdrop of a cozy café. The woman on the left wears a soft sweater and simple necklace, while the man on the right is in a casual button-down with rolled sleeves. They sit at a small round table, perhaps with coffee cups or dessert plates visible in the foreground. The café setting is suggested through soft bokeh of warm lights, wooden elements, and perhaps hints of other patrons blurred in the background. The lighting is warm and intimate, suggesting afternoon or evening hours. Their posture shows them leaning slightly toward each other, engaged in conversation or sharing a moment of connection. Their expressions are relaxed and authentic - perhaps mid-laugh or exchanging warm glances. The overall impression is one of everyday intimacy, comfortable companionship, and the simple pleasure of shared time together.",
-  },
+  }
 ];
 
 export default function Featured() {
